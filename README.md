@@ -153,18 +153,6 @@ This improves **throughput and verification accuracy**.
 
 # 🛠 Installation
 
-Clone repository
-
-
-git clone https://github.com/yourusername/automated-fact-checker.git
-
-
-Go to project
-
-
-cd automated-fact-checker
-
-
 Install dependencies
 
 
@@ -177,7 +165,7 @@ npm install
 
 Start MongoDB first.
 
-Then load facts into database:
+Load facts into database:
 
 
 node scripts/loadFacts.js
@@ -213,6 +201,35 @@ Result: False
 
 ---
 
+# 📸 Frontend Interface
+
+Example UI of the Fact Checker:
+
+<img width="1270" height="714" alt="Screenshot 2026-03-09 203138" src="https://github.com/user-attachments/assets/433370bf-bea7-4bc8-911a-515b6626e66b" />
+
+
+The interface allows users to enter a news claim and verify whether it is **True, False, or Unverified**.
+
+---
+
+# 🗄 MongoDB Database (mongosh)
+
+Facts stored in MongoDB:
+<img width="511" height="755" alt="Screenshot 2026-03-09 203307" src="https://github.com/user-attachments/assets/e5c55118-4535-4639-87d4-58a1ee339fc3" />
+
+
+Example command used:
+
+
+mongosh
+use factchecker
+db.facts.find()
+
+
+This confirms that the system retrieves **verified facts from the database** during the verification process.
+
+---
+
 # 🎯 Future Improvements
 
 - NLP similarity matching
@@ -231,10 +248,28 @@ This project is for **educational purposes**.
 # 👨‍💻 Author
 
 Developed as part of **AI Fact-Checking Pipeline Project**.
-⭐ Optional (Makes GitHub Look Much Better)
 
-Add these files also:
 
-.gitignore
-node_modules
-.env
+Open
+
+http://localhost:3000
+
+Screenshot:
+
+AI Fact Checker UI
+Input box
+Check Fact button
+Result: False
+
+Save as:
+
+screenshots/frontend.png
+2️⃣ MongoDB
+
+In terminal:
+
+mongosh
+use factchecker
+db.facts.find()
+
+
