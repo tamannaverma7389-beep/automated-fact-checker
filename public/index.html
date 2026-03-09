@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>AI Fact Checker</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🔎 AI Fact Checker</h2>
+
+<input id="input" placeholder="Enter claim">
+
+<br>
+
+<button onclick="checkFact()">Check Fact</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+async function checkFact(){
+
+const text = document.getElementById("input").value;
+
+const res = await fetch("/api/check",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({text})
+});
+
+const data = await res.json();
+
+document.getElementById("result").innerText =
+"Result: " + data.result;
+
+}
+
+</script>
+
+</body>
+</html>
